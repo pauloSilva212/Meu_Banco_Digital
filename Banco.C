@@ -18,6 +18,8 @@ int encontrarConta(Cliente cliente, int tipo) {
     return -1;
 }
 
+
+
 // Calcula o saldo total do cliente
 float calcularSaldo(Cliente cliente) {
 
@@ -31,6 +33,8 @@ float calcularSaldo(Cliente cliente) {
     return total;
 }
 
+
+
 // Registra uma movimentacao no historico
 void registrarHistorico(Cliente clientes[], int c, char texto[]) {
 
@@ -38,6 +42,9 @@ void registrarHistorico(Cliente clientes[], int c, char texto[]) {
         strcat(clientes[c].historico, texto);
     }
 }
+
+
+
 
 // CADASTRO DOS CLIENTES
 void abrirBanco(Cliente clientes[], int quantidade) {
@@ -117,6 +124,10 @@ void abrirBanco(Cliente clientes[], int quantidade) {
     printf("\nBanco aberto com sucesso!\n");
 }
 
+
+
+
+
 // DEPOSITO
 void depositar(Cliente clientes[], int quantidade) {
 
@@ -159,6 +170,12 @@ void depositar(Cliente clientes[], int quantidade) {
 
     printf("Deposito realizado!\n");
 }
+
+
+
+
+
+
 
 // SAQUE
 void sacar(Cliente clientes[], int quantidade) {
@@ -203,6 +220,11 @@ void sacar(Cliente clientes[], int quantidade) {
     printf("Saque realizado!\n");
 }
 
+
+
+
+
+
 // CONSULTA DE SALDO
 void consultarSaldo(Cliente clientes[], int quantidade) {
 
@@ -236,6 +258,10 @@ void consultarSaldo(Cliente clientes[], int quantidade) {
     printf("Saldo total: R$ %.2f\n",
         calcularSaldo(clientes[cliente]));
 }
+
+
+
+
 
 // EMPRESTIMO
 void solicitarEmprestimo(Cliente clientes[], int quantidade) {
@@ -298,6 +324,12 @@ void solicitarEmprestimo(Cliente clientes[], int quantidade) {
     printf("Emprestimo aprovado!\n");
 }
 
+
+
+
+
+
+
 // COMPRA DE TITULO
 void comprarTitulo(Cliente clientes[], int quantidade) {
 
@@ -339,6 +371,12 @@ void comprarTitulo(Cliente clientes[], int quantidade) {
     printf("Titulo adquirido com sucesso!\n");
 }
 
+
+
+
+
+
+
 // ALERTA DE SALDO NEGATIVO
 void verificarSaldoNegativo(Cliente clientes[], int quantidade) {
 
@@ -356,6 +394,12 @@ void verificarSaldoNegativo(Cliente clientes[], int quantidade) {
         }
     }
 }
+
+
+
+
+
+
 
 // HISTORICO DO BANCO
 void consultarHistorico(Cliente clientes[], int quantidade) {
@@ -448,6 +492,12 @@ void consultarHistorico(Cliente clientes[], int quantidade) {
     }
 }
 
+
+
+
+
+
+
 // SORTEIO BASEADO EM FIBONACCI
 void efetuarSorteio(Cliente clientes[], int quantidade) {
 
@@ -514,7 +564,14 @@ void efetuarSorteio(Cliente clientes[], int quantidade) {
         }
     }
 
-    // Gera um numero de Fibonacci
+   
+
+
+
+
+
+
+// Gera um numero de Fibonacci
 
     passos = (int)(time(NULL) % 10) + 1;
 
@@ -525,11 +582,17 @@ void efetuarSorteio(Cliente clientes[], int quantidade) {
         b = proximo;
     }
 
-    // Escolhe o vencedor
+   
+
+
+// Escolhe o vencedor
 
     vencedor = ordem[a % 5];
 
-    // Encontra a conta de maior saldo do vencedor
+    
+
+
+// Encontra a conta de maior saldo do vencedor
 
     for (i = 0; i < 3; i++) {
 
@@ -563,6 +626,11 @@ void efetuarSorteio(Cliente clientes[], int quantidade) {
     sprintf(texto, "Premio do sorteio: R$ %.2f\n", premio);
     registrarHistorico(clientes, vencedor, texto);
 }
+
+
+
+
+
 
 // MENU DE OPERACOES
 void menuOperacoes(Cliente clientes[], int quantidade) {
